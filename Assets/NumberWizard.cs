@@ -31,20 +31,24 @@ public class NumberWizard : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             minGuess = guess;
-            guess = (maxGuess + minGuess) / 2;
-            Debug.Log("Is it higher or lower than ..." + guess);
+            NextGuess();
         }
 
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             maxGuess = guess;
-            guess = (maxGuess + minGuess) / 2;
-            Debug.Log("Is it higher or lower than ..." + guess);
+            NextGuess();
         }
 
         else if (Input.GetKeyDown(KeyCode.Return))
         {
             Debug.Log("I am a genius.");
         }
+    }
+
+    void NextGuess()
+    {
+        guess = (maxGuess + minGuess) / 2;
+        Debug.Log("Is it higher or lower than ..." + guess);
     }
 }
