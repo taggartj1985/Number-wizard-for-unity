@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class NumberWizard : MonoBehaviour
 {
-    int maxGuess = 1000;
-    int minGuess = 1;
-    int guess = 500;
+    int maxGuess;
+    int minGuess;
+    int guess;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +16,10 @@ public class NumberWizard : MonoBehaviour
 
     void StartGame()
     {
+        maxGuess = 1000;
+        minGuess = 1;
+        guess = 500;
+
         Debug.Log("Welcome to number wizard!");
         Debug.Log("Pick a number");
         Debug.Log("Highest number is: " + maxGuess);
@@ -43,6 +47,7 @@ public class NumberWizard : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Return))
         {
             Debug.Log("I am a genius.");
+            StartGame();
         }
     }
 
